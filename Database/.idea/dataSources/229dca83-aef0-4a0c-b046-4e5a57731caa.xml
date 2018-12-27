@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="11-702@localhost">
+  <database-model serializer="dbm" rdbms="POSTGRES" format-version="4.4">
+    <root id="1"/>
+    <database id="2" parent="1" name="11-702">
+      <ObjectId>16393</ObjectId>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </database>
+    <database id="3" parent="1" name="postgres">
+      <ObjectId>12373</ObjectId>
+    </database>
+    <schema id="4" parent="2" name="public">
+      <ObjectId>2200</ObjectId>
+      <IntrospectionTimestamp>2018-09-11.11:13:15.091</IntrospectionTimestamp>
+      <IntrospectionStateNumber>649</IntrospectionStateNumber>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="5" parent="2" name="pg_catalog">
+      <ObjectId>11</ObjectId>
+    </schema>
+    <schema id="6" parent="2" name="pg_toast">
+      <ObjectId>99</ObjectId>
+    </schema>
+    <schema id="7" parent="2" name="pg_temp_1">
+      <ObjectId>11816</ObjectId>
+    </schema>
+    <schema id="8" parent="2" name="pg_toast_temp_1">
+      <ObjectId>11817</ObjectId>
+    </schema>
+    <schema id="9" parent="2" name="information_schema">
+      <ObjectId>12081</ObjectId>
+    </schema>
+    <sequence id="10" parent="4" name="driver_id_seq">
+      <ObjectId>16415</ObjectId>
+      <StateNumber>649</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+    </sequence>
+    <sequence id="11" parent="4" name="order_id_seq">
+      <ObjectId>16407</ObjectId>
+      <StateNumber>648</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+    </sequence>
+    <sequence id="12" parent="4" name="taxi_user_id_seq">
+      <ObjectId>16394</ObjectId>
+      <StateNumber>618</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+    </sequence>
+    <table id="13" parent="4" name="driver">
+      <ObjectId>16417</ObjectId>
+      <StateNumber>649</StateNumber>
+    </table>
+    <table id="14" parent="4" name="order">
+      <ObjectId>16409</ObjectId>
+      <StateNumber>648</StateNumber>
+    </table>
+    <table id="15" parent="4" name="taxi_user">
+      <ObjectId>16396</ObjectId>
+      <StateNumber>635</StateNumber>
+    </table>
+    <column id="16" parent="13" name="id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>649</StateNumber>
+      <SequenceName>driver_id_seq</SequenceName>
+      <DefaultExpression>nextval(&apos;driver_id_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="17" parent="13" name="name">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+      <StateNumber>649</StateNumber>
+    </column>
+    <index id="18" parent="13" name="driver_pkey">
+      <ObjectId>16421</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="19" parent="13" name="driver_pkey">
+      <ObjectId>16422</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>driver_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="20" parent="14" name="id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>648</StateNumber>
+      <SequenceName>order_id_seq</SequenceName>
+      <DefaultExpression>nextval(&apos;order_id_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="21" parent="14" name="user_id">
+      <Position>2</Position>
+      <DataType>bigint|0</DataType>
+      <StateNumber>648</StateNumber>
+    </column>
+    <column id="22" parent="14" name="drvier_id">
+      <Position>3</Position>
+      <DataType>bigint|0</DataType>
+      <StateNumber>648</StateNumber>
+    </column>
+    <column id="23" parent="14" name="car_id">
+      <Position>4</Position>
+      <DataType>bigint|0</DataType>
+      <StateNumber>648</StateNumber>
+    </column>
+    <index id="24" parent="14" name="order_pkey">
+      <ObjectId>16413</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="25" parent="14" name="order_pkey">
+      <ObjectId>16414</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>order_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="26" parent="15" name="id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>618</StateNumber>
+      <SequenceName>taxi_user_id_seq</SequenceName>
+      <DefaultExpression>nextval(&apos;taxi_user_id_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="27" parent="15" name="first_name">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+      <StateNumber>618</StateNumber>
+    </column>
+    <column id="28" parent="15" name="last_name">
+      <Position>3</Position>
+      <DataType>varchar(50)|0</DataType>
+      <StateNumber>618</StateNumber>
+    </column>
+    <column id="29" parent="15" name="hash_password">
+      <Position>4</Position>
+      <DataType>varchar(200)|0</DataType>
+      <StateNumber>618</StateNumber>
+    </column>
+    <column id="30" parent="15" name="prone">
+      <Position>5</Position>
+      <DataType>varchar(20)|0</DataType>
+      <StateNumber>618</StateNumber>
+    </column>
+    <column id="31" parent="15" name="email">
+      <Position>6</Position>
+      <DataType>varchar(100)|0</DataType>
+      <StateNumber>618</StateNumber>
+    </column>
+    <column id="32" parent="15" name="photo">
+      <Position>7</Position>
+      <DataType>varchar(1000)|0</DataType>
+      <StateNumber>618</StateNumber>
+    </column>
+    <column id="33" parent="15" name="role">
+      <Position>8</Position>
+      <DataType>varchar(50)|0</DataType>
+      <StateNumber>635</StateNumber>
+    </column>
+    <index id="34" parent="15" name="taxi_user_pkey">
+      <ObjectId>16403</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="35" parent="15" name="taxi_user_pkey">
+      <ObjectId>16404</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>taxi_user_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>

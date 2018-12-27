@@ -1,0 +1,634 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="cinematest@localhost">
+  <database-model serializer="dbm" rdbms="POSTGRES" format-version="4.4">
+    <root id="1"/>
+    <database id="2" parent="1" name="cinematest">
+      <ObjectId>25183</ObjectId>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </database>
+    <database id="3" parent="1" name="postgres">
+      <ObjectId>12373</ObjectId>
+    </database>
+    <database id="4" parent="1" name="11-702">
+      <ObjectId>16393</ObjectId>
+    </database>
+    <database id="5" parent="1" name="test">
+      <ObjectId>16425</ObjectId>
+    </database>
+    <database id="6" parent="1" name="cinema">
+      <ObjectId>16429</ObjectId>
+    </database>
+    <database id="7" parent="1" name="shopping_cart_db">
+      <ObjectId>25381</ObjectId>
+    </database>
+    <database id="8" parent="1" name="logparser">
+      <ObjectId>66427</ObjectId>
+    </database>
+    <database id="9" parent="1" name="newone">
+      <ObjectId>74648</ObjectId>
+    </database>
+    <schema id="10" parent="2" name="public">
+      <ObjectId>2200</ObjectId>
+      <IntrospectionTimestamp>2018-12-27.18:26:00.634</IntrospectionTimestamp>
+      <IntrospectionStateNumber>2066214</IntrospectionStateNumber>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="11" parent="2" name="pg_catalog">
+      <ObjectId>11</ObjectId>
+    </schema>
+    <schema id="12" parent="2" name="pg_toast">
+      <ObjectId>99</ObjectId>
+    </schema>
+    <schema id="13" parent="2" name="pg_temp_1">
+      <ObjectId>11816</ObjectId>
+    </schema>
+    <schema id="14" parent="2" name="pg_toast_temp_1">
+      <ObjectId>11817</ObjectId>
+    </schema>
+    <schema id="15" parent="2" name="information_schema">
+      <ObjectId>12081</ObjectId>
+    </schema>
+    <sequence id="16" parent="10" name="admin_id_seq">
+      <ObjectId>74629</ObjectId>
+      <StateNumber>2066184</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+    </sequence>
+    <sequence id="17" parent="10" name="auditorium_id_auditorium_seq">
+      <ObjectId>25312</ObjectId>
+      <StateNumber>865</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+    </sequence>
+    <sequence id="18" parent="10" name="employee_id_employee_seq">
+      <ObjectId>25280</ObjectId>
+      <StateNumber>861</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+    </sequence>
+    <sequence id="19" parent="10" name="movie_id_movie_seq">
+      <ObjectId>25320</ObjectId>
+      <StateNumber>866</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+    </sequence>
+    <sequence id="20" parent="10" name="reservation_id_reservation_seq">
+      <ObjectId>25267</ObjectId>
+      <StateNumber>859</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+    </sequence>
+    <sequence id="21" parent="10" name="reservation_type_id_reservation_type_seq">
+      <ObjectId>25288</ObjectId>
+      <StateNumber>862</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+    </sequence>
+    <sequence id="22" parent="10" name="screening_id_screening_seq">
+      <ObjectId>25304</ObjectId>
+      <StateNumber>864</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+    </sequence>
+    <sequence id="23" parent="10" name="seat_id_seat_seq">
+      <ObjectId>25296</ObjectId>
+      <StateNumber>863</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+    </sequence>
+    <sequence id="24" parent="10" name="seat_reserved_id_seat_reserved_seq">
+      <ObjectId>25259</ObjectId>
+      <StateNumber>858</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+    </sequence>
+    <table id="25" parent="10" name="admin">
+      <ObjectId>74631</ObjectId>
+      <StateNumber>2066187</StateNumber>
+    </table>
+    <table id="26" parent="10" name="auditorium">
+      <ObjectId>25314</ObjectId>
+      <StateNumber>870</StateNumber>
+    </table>
+    <table id="27" parent="10" name="auth">
+      <ObjectId>66417</ObjectId>
+      <StateNumber>2066187</StateNumber>
+    </table>
+    <table id="28" parent="10" name="employee">
+      <ObjectId>25282</ObjectId>
+      <StateNumber>2066182</StateNumber>
+    </table>
+    <table id="29" parent="10" name="movie">
+      <ObjectId>25322</ObjectId>
+      <StateNumber>2066165</StateNumber>
+    </table>
+    <table id="30" parent="10" name="reservation">
+      <ObjectId>25269</ObjectId>
+      <StateNumber>2066214</StateNumber>
+    </table>
+    <table id="31" parent="10" name="reservation_type">
+      <ObjectId>25290</ObjectId>
+      <StateNumber>1948849</StateNumber>
+    </table>
+    <table id="32" parent="10" name="screening">
+      <ObjectId>25306</ObjectId>
+      <StateNumber>2066211</StateNumber>
+    </table>
+    <table id="33" parent="10" name="seat">
+      <ObjectId>25298</ObjectId>
+      <StateNumber>871</StateNumber>
+    </table>
+    <table id="34" parent="10" name="seat_reserved">
+      <ObjectId>25261</ObjectId>
+      <StateNumber>2066214</StateNumber>
+    </table>
+    <column id="35" parent="25" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>2066184</StateNumber>
+      <SequenceName>admin_id_seq</SequenceName>
+      <DefaultExpression>nextval(&apos;admin_id_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="36" parent="25" name="username">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>2066184</StateNumber>
+    </column>
+    <column id="37" parent="25" name="password">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>2066184</StateNumber>
+    </column>
+    <index id="38" parent="25" name="admin_pkey">
+      <ObjectId>74638</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="39" parent="25" name="admin_username_uindex">
+      <ObjectId>74640</ObjectId>
+      <ColNames>username</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="40" parent="25" name="admin_pkey">
+      <ObjectId>74639</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>admin_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="41" parent="26" name="id_auditorium">
+      <Position>1</Position>
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>865</StateNumber>
+      <SequenceName>auditorium_id_auditorium_seq</SequenceName>
+      <DefaultExpression>nextval(&apos;auditorium_id_auditorium_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="42" parent="26" name="name">
+      <Position>2</Position>
+      <DataType>varchar(32)|0</DataType>
+      <StateNumber>865</StateNumber>
+    </column>
+    <column id="43" parent="26" name="seats_no">
+      <Position>3</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>865</StateNumber>
+    </column>
+    <index id="44" parent="26" name="auditorium_pkey">
+      <ObjectId>25318</ObjectId>
+      <ColNames>id_auditorium</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="45" parent="26" name="auditorium_pkey">
+      <ObjectId>25319</ObjectId>
+      <ColNames>id_auditorium</ColNames>
+      <UnderlyingIndexName>auditorium_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="46" parent="27" name="cookievalue">
+      <Position>1</Position>
+      <DataType>varchar(256)|0</DataType>
+      <StateNumber>2019908</StateNumber>
+    </column>
+    <column id="47" parent="27" name="user_id">
+      <Position>2</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>2019909</StateNumber>
+    </column>
+    <foreign-key id="48" parent="27" name="auth_admin_id_fk">
+      <ObjectId>74643</ObjectId>
+      <ColNames>user_id</ColNames>
+      <RefTableId>74631</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>admin</RefTableName>
+      <RefKeyName>admin_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="49" parent="27" name="auth_employee_id_employee_fk">
+      <ObjectId>66422</ObjectId>
+      <ColNames>user_id</ColNames>
+      <RefTableId>25282</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>employee</RefTableName>
+      <RefKeyName>employee_pkey</RefKeyName>
+      <RefColNames>id_employee</RefColNames>
+    </foreign-key>
+    <column id="50" parent="28" name="id_employee">
+      <Position>1</Position>
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>861</StateNumber>
+      <SequenceName>employee_id_employee_seq</SequenceName>
+      <DefaultExpression>nextval(&apos;employee_id_employee_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="51" parent="28" name="username">
+      <Position>2</Position>
+      <DataType>varchar(32)|0</DataType>
+      <StateNumber>861</StateNumber>
+    </column>
+    <column id="52" parent="28" name="password">
+      <Position>3</Position>
+      <DataType>varchar(100)|0</DataType>
+      <StateNumber>861</StateNumber>
+    </column>
+    <column id="53" parent="28" name="first_name">
+      <Position>4</Position>
+      <DataType>varchar(100)|0</DataType>
+      <StateNumber>1948858</StateNumber>
+    </column>
+    <column id="54" parent="28" name="last_name">
+      <Position>5</Position>
+      <DataType>varchar(100)|0</DataType>
+      <StateNumber>1948859</StateNumber>
+    </column>
+    <column id="55" parent="28" name="sex">
+      <Position>6</Position>
+      <DataType>varchar(10)|0</DataType>
+      <StateNumber>1948860</StateNumber>
+    </column>
+    <column id="56" parent="28" name="photo">
+      <Position>7</Position>
+      <DataType>varchar(1024)|0</DataType>
+      <StateNumber>1948861</StateNumber>
+    </column>
+    <index id="57" parent="28" name="employee_pkey">
+      <ObjectId>25286</ObjectId>
+      <ColNames>id_employee</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="58" parent="28" name="employee_pkey">
+      <ObjectId>25287</ObjectId>
+      <ColNames>id_employee</ColNames>
+      <UnderlyingIndexName>employee_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="59" parent="29" name="id_movie">
+      <Position>1</Position>
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>866</StateNumber>
+      <SequenceName>movie_id_movie_seq</SequenceName>
+      <DefaultExpression>nextval(&apos;movie_id_movie_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="60" parent="29" name="title">
+      <Position>2</Position>
+      <DataType>varchar(256)|0</DataType>
+      <StateNumber>866</StateNumber>
+    </column>
+    <column id="61" parent="29" name="director">
+      <Position>3</Position>
+      <DataType>varchar(256)|0</DataType>
+      <StateNumber>866</StateNumber>
+    </column>
+    <column id="62" parent="29" name="actors">
+      <Position>4</Position>
+      <DataType>varchar(256)|0</DataType>
+      <StateNumber>866</StateNumber>
+    </column>
+    <column id="63" parent="29" name="description">
+      <Position>5</Position>
+      <DataType>text|0</DataType>
+      <StateNumber>866</StateNumber>
+    </column>
+    <column id="64" parent="29" name="duration_min">
+      <Position>6</Position>
+      <DataType>varchar(256)|0</DataType>
+      <StateNumber>1948844</StateNumber>
+    </column>
+    <column id="65" parent="29" name="ratings">
+      <Position>7</Position>
+      <DataType>varchar(50)|0</DataType>
+      <StateNumber>1948845</StateNumber>
+    </column>
+    <column id="66" parent="29" name="posteraddress">
+      <Position>8</Position>
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>1948846</StateNumber>
+    </column>
+    <index id="67" parent="29" name="movie_pkey">
+      <ObjectId>25329</ObjectId>
+      <ColNames>id_movie</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="68" parent="29" name="movie_pkey">
+      <ObjectId>25330</ObjectId>
+      <ColNames>id_movie</ColNames>
+      <UnderlyingIndexName>movie_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="69" parent="30" name="id_reservation">
+      <Position>1</Position>
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>859</StateNumber>
+      <SequenceName>reservation_id_reservation_seq</SequenceName>
+      <DefaultExpression>nextval(&apos;reservation_id_reservation_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="70" parent="30" name="screening_id">
+      <Position>2</Position>
+      <DataType>bigint|0</DataType>
+      <StateNumber>1948847</StateNumber>
+    </column>
+    <column id="71" parent="30" name="employee_reserved_id">
+      <Position>3</Position>
+      <DataType>bigint|0</DataType>
+      <StateNumber>1948848</StateNumber>
+    </column>
+    <column id="72" parent="30" name="reservation_type_id">
+      <Position>4</Position>
+      <DataType>bigint|0</DataType>
+      <StateNumber>1948849</StateNumber>
+    </column>
+    <column id="73" parent="30" name="reservation_contact">
+      <Position>5</Position>
+      <DataType>varchar(1024)|0</DataType>
+      <StateNumber>859</StateNumber>
+    </column>
+    <column id="74" parent="30" name="reserved">
+      <Position>6</Position>
+      <DataType>boolean|0</DataType>
+      <StateNumber>859</StateNumber>
+    </column>
+    <column id="75" parent="30" name="employee_paid_id">
+      <Position>7</Position>
+      <DataType>bigint|0</DataType>
+      <StateNumber>1948850</StateNumber>
+    </column>
+    <column id="76" parent="30" name="paid">
+      <Position>8</Position>
+      <DataType>boolean|0</DataType>
+      <StateNumber>859</StateNumber>
+    </column>
+    <column id="77" parent="30" name="active">
+      <Position>9</Position>
+      <DataType>boolean|0</DataType>
+      <StateNumber>859</StateNumber>
+    </column>
+    <column id="78" parent="30" name="seat_reserved">
+      <Position>10</Position>
+      <DataType>bigint|0</DataType>
+      <StateNumber>2066213</StateNumber>
+    </column>
+    <index id="79" parent="30" name="reservation_pkey">
+      <ObjectId>25276</ObjectId>
+      <ColNames>id_reservation</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="80" parent="30" name="reservation_pkey">
+      <ObjectId>25277</ObjectId>
+      <ColNames>id_reservation</ColNames>
+      <UnderlyingIndexName>reservation_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="81" parent="30" name="reservation_screening_id_fkey">
+      <ObjectId>49957</ObjectId>
+      <ColNames>screening_id</ColNames>
+      <RefTableId>25306</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>screening</RefTableName>
+      <RefKeyName>screening_pkey</RefKeyName>
+      <RefColNames>id_screening</RefColNames>
+    </foreign-key>
+    <foreign-key id="82" parent="30" name="reservation_employee_reserved_id_fkey">
+      <ObjectId>49969</ObjectId>
+      <ColNames>employee_reserved_id</ColNames>
+      <RefTableId>25282</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>employee</RefTableName>
+      <RefKeyName>employee_pkey</RefKeyName>
+      <RefColNames>id_employee</RefColNames>
+    </foreign-key>
+    <foreign-key id="83" parent="30" name="reservation_reservation_type_id_fkey">
+      <ObjectId>49981</ObjectId>
+      <ColNames>reservation_type_id</ColNames>
+      <RefTableId>25290</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>reservation_type</RefTableName>
+      <RefKeyName>reservation_type_pkey</RefKeyName>
+      <RefColNames>id_reservation_type</RefColNames>
+    </foreign-key>
+    <foreign-key id="84" parent="30" name="reservation_employee_paid_id_fkey">
+      <ObjectId>49993</ObjectId>
+      <ColNames>employee_paid_id</ColNames>
+      <RefTableId>25282</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>employee</RefTableName>
+      <RefKeyName>employee_pkey</RefKeyName>
+      <RefColNames>id_employee</RefColNames>
+    </foreign-key>
+    <foreign-key id="85" parent="30" name="reservation_seat_reserved_id_seat_reserved_fk">
+      <ObjectId>74741</ObjectId>
+      <ColNames>seat_reserved</ColNames>
+      <RefTableId>25261</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>seat_reserved</RefTableName>
+      <RefKeyName>seat_reserved_pkey</RefKeyName>
+      <RefColNames>id_seat_reserved</RefColNames>
+    </foreign-key>
+    <column id="86" parent="31" name="id_reservation_type">
+      <Position>1</Position>
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>862</StateNumber>
+      <SequenceName>reservation_type_id_reservation_type_seq</SequenceName>
+      <DefaultExpression>nextval(&apos;reservation_type_id_reservation_type_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="87" parent="31" name="reservation_type">
+      <Position>2</Position>
+      <DataType>varchar(32)|0</DataType>
+      <StateNumber>862</StateNumber>
+    </column>
+    <index id="88" parent="31" name="reservation_type_pkey">
+      <ObjectId>25294</ObjectId>
+      <ColNames>id_reservation_type</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="89" parent="31" name="reservation_type_pkey">
+      <ObjectId>25295</ObjectId>
+      <ColNames>id_reservation_type</ColNames>
+      <UnderlyingIndexName>reservation_type_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="90" parent="32" name="id_screening">
+      <Position>1</Position>
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>864</StateNumber>
+      <SequenceName>screening_id_screening_seq</SequenceName>
+      <DefaultExpression>nextval(&apos;screening_id_screening_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="91" parent="32" name="id_movie">
+      <Position>2</Position>
+      <DataType>bigint|0</DataType>
+      <StateNumber>2066210</StateNumber>
+    </column>
+    <column id="92" parent="32" name="auditorium_id">
+      <Position>3</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>864</StateNumber>
+    </column>
+    <column id="93" parent="32" name="screening_start">
+      <Position>5</Position>
+      <DataType>timestamp|0</DataType>
+      <StateNumber>2066211</StateNumber>
+    </column>
+    <index id="94" parent="32" name="screening_pkey">
+      <ObjectId>25310</ObjectId>
+      <ColNames>id_screening</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="95" parent="32" name="screening_pkey">
+      <ObjectId>25311</ObjectId>
+      <ColNames>id_screening</ColNames>
+      <UnderlyingIndexName>screening_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="96" parent="32" name="screening_movie_id_fkey">
+      <ObjectId>74609</ObjectId>
+      <ColNames>id_movie</ColNames>
+      <RefTableId>25322</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>movie</RefTableName>
+      <RefKeyName>movie_pkey</RefKeyName>
+      <RefColNames>id_movie</RefColNames>
+    </foreign-key>
+    <foreign-key id="97" parent="32" name="screening_auditorium_id_fkey">
+      <ObjectId>25336</ObjectId>
+      <ColNames>auditorium_id</ColNames>
+      <RefTableId>25314</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>auditorium</RefTableName>
+      <RefKeyName>auditorium_pkey</RefKeyName>
+      <RefColNames>id_auditorium</RefColNames>
+    </foreign-key>
+    <column id="98" parent="33" name="id_seat">
+      <Position>1</Position>
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>863</StateNumber>
+      <SequenceName>seat_id_seat_seq</SequenceName>
+      <DefaultExpression>nextval(&apos;seat_id_seat_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="99" parent="33" name="row">
+      <Position>2</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>863</StateNumber>
+    </column>
+    <column id="100" parent="33" name="number">
+      <Position>3</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>863</StateNumber>
+    </column>
+    <column id="101" parent="33" name="auditorium_id">
+      <Position>4</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>863</StateNumber>
+    </column>
+    <index id="102" parent="33" name="seat_pkey">
+      <ObjectId>25302</ObjectId>
+      <ColNames>id_seat</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="103" parent="33" name="seat_pkey">
+      <ObjectId>25303</ObjectId>
+      <ColNames>id_seat</ColNames>
+      <UnderlyingIndexName>seat_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="104" parent="33" name="seat_auditorium_id_fkey">
+      <ObjectId>25341</ObjectId>
+      <ColNames>auditorium_id</ColNames>
+      <RefTableId>25314</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>auditorium</RefTableName>
+      <RefKeyName>auditorium_pkey</RefKeyName>
+      <RefColNames>id_auditorium</RefColNames>
+    </foreign-key>
+    <column id="105" parent="34" name="id_seat_reserved">
+      <Position>1</Position>
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>858</StateNumber>
+      <SequenceName>seat_reserved_id_seat_reserved_seq</SequenceName>
+      <DefaultExpression>nextval(&apos;seat_reserved_id_seat_reserved_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="106" parent="34" name="seat_id">
+      <Position>2</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>858</StateNumber>
+    </column>
+    <column id="107" parent="34" name="reservation_id">
+      <Position>3</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>858</StateNumber>
+    </column>
+    <column id="108" parent="34" name="screening_id">
+      <Position>4</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>858</StateNumber>
+    </column>
+    <index id="109" parent="34" name="seat_reserved_pkey">
+      <ObjectId>25265</ObjectId>
+      <ColNames>id_seat_reserved</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="110" parent="34" name="seat_reserved_pkey">
+      <ObjectId>25266</ObjectId>
+      <ColNames>id_seat_reserved</ColNames>
+      <UnderlyingIndexName>seat_reserved_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="111" parent="34" name="seat_reserved_seat_id_fkey">
+      <ObjectId>25346</ObjectId>
+      <ColNames>seat_id</ColNames>
+      <RefTableId>25298</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>seat</RefTableName>
+      <RefKeyName>seat_pkey</RefKeyName>
+      <RefColNames>id_seat</RefColNames>
+    </foreign-key>
+    <foreign-key id="112" parent="34" name="seat_reserved_reservation_id_fkey">
+      <ObjectId>25351</ObjectId>
+      <ColNames>reservation_id</ColNames>
+      <RefTableId>25269</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>reservation</RefTableName>
+      <RefKeyName>reservation_pkey</RefKeyName>
+      <RefColNames>id_reservation</RefColNames>
+    </foreign-key>
+    <foreign-key id="113" parent="34" name="seat_reserved_screening_id_fkey">
+      <ObjectId>25356</ObjectId>
+      <ColNames>screening_id</ColNames>
+      <RefTableId>25306</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>screening</RefTableName>
+      <RefKeyName>screening_pkey</RefKeyName>
+      <RefColNames>id_screening</RefColNames>
+    </foreign-key>
+  </database-model>
+</dataSource>

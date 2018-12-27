@@ -1,0 +1,4 @@
+ru\itis\repositories\ProductsRepository.class
+ru\itis\Models\Product$ProductBuilder.class
+ru\itis\Models\Product.class
+ru\itis\repositories\CrudRepository.class

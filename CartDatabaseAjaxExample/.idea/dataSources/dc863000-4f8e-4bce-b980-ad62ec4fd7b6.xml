@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="test@localhost">
+  <database-model serializer="dbm" rdbms="POSTGRES" format-version="4.4">
+    <root id="1"/>
+    <database id="2" parent="1" name="test">
+      <ObjectId>16425</ObjectId>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </database>
+    <database id="3" parent="1" name="postgres">
+      <ObjectId>12373</ObjectId>
+    </database>
+    <database id="4" parent="1" name="11-702">
+      <ObjectId>16393</ObjectId>
+    </database>
+    <database id="5" parent="1" name="cinema">
+      <ObjectId>16429</ObjectId>
+    </database>
+    <database id="6" parent="1" name="cinematest">
+      <ObjectId>25183</ObjectId>
+    </database>
+    <database id="7" parent="1" name="shopping_cart_db">
+      <ObjectId>25381</ObjectId>
+    </database>
+    <schema id="8" parent="2" name="public">
+      <ObjectId>2200</ObjectId>
+      <IntrospectionTimestamp>2018-12-18.15:12:41.352</IntrospectionTimestamp>
+      <IntrospectionStateNumber>1949197</IntrospectionStateNumber>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="9" parent="2" name="pg_catalog">
+      <ObjectId>11</ObjectId>
+    </schema>
+    <schema id="10" parent="2" name="pg_toast">
+      <ObjectId>99</ObjectId>
+    </schema>
+    <schema id="11" parent="2" name="pg_temp_1">
+      <ObjectId>11816</ObjectId>
+    </schema>
+    <schema id="12" parent="2" name="pg_toast_temp_1">
+      <ObjectId>11817</ObjectId>
+    </schema>
+    <schema id="13" parent="2" name="information_schema">
+      <ObjectId>12081</ObjectId>
+    </schema>
+    <sequence id="14" parent="8" name="basket_id_seq">
+      <ObjectId>41811</ObjectId>
+      <StateNumber>1948830</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+    </sequence>
+    <sequence id="15" parent="8" name="basket_product_id_seq">
+      <ObjectId>50036</ObjectId>
+      <StateNumber>1949137</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+    </sequence>
+    <sequence id="16" parent="8" name="product_id_seq">
+      <ObjectId>41803</ObjectId>
+      <StateNumber>1948829</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+    </sequence>
+    <sequence id="17" parent="8" name="shop_user_id_seq">
+      <ObjectId>41795</ObjectId>
+      <StateNumber>1948828</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+    </sequence>
+    <table id="18" parent="8" name="auth">
+      <ObjectId>41843</ObjectId>
+      <StateNumber>1948840</StateNumber>
+    </table>
+    <table id="19" parent="8" name="cart">
+      <ObjectId>41813</ObjectId>
+      <StateNumber>1949190</StateNumber>
+    </table>
+    <table id="20" parent="8" name="cart_product">
+      <ObjectId>41824</ObjectId>
+      <StateNumber>1949191</StateNumber>
+    </table>
+    <table id="21" parent="8" name="product">
+      <ObjectId>41805</ObjectId>
+      <StateNumber>1949100</StateNumber>
+    </table>
+    <table id="22" parent="8" name="shop_user">
+      <ObjectId>41797</ObjectId>
+      <StateNumber>1948841</StateNumber>
+    </table>
+    <column id="23" parent="18" name="user_id">
+      <Position>1</Position>
+      <DataType>bigint|0</DataType>
+      <StateNumber>1948840</StateNumber>
+    </column>
+    <column id="24" parent="18" name="cookie_value">
+      <Position>2</Position>
+      <DataType>varchar(1024)|0</DataType>
+      <StateNumber>1948840</StateNumber>
+    </column>
+    <foreign-key id="25" parent="18" name="auth_user_id_fkey">
+      <ObjectId>41849</ObjectId>
+      <ColNames>user_id</ColNames>
+      <RefTableId>41797</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>shop_user</RefTableName>
+      <RefKeyName>shop_user_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="26" parent="19" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1948830</StateNumber>
+      <SequenceName>basket_id_seq</SequenceName>
+      <DefaultExpression>nextval(&apos;basket_id_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="27" parent="19" name="owner_id">
+      <Position>2</Position>
+      <DataType>bigint|0</DataType>
+      <StateNumber>1949197</StateNumber>
+    </column>
+    <index id="28" parent="19" name="basket_pkey">
+      <ObjectId>41817</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="29" parent="19" name="basket_pkey">
+      <ObjectId>41818</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>basket_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="30" parent="19" name="basket_user_id_fkey">
+      <ObjectId>41819</ObjectId>
+      <ColNames>owner_id</ColNames>
+      <RefTableId>41797</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>shop_user</RefTableName>
+      <RefKeyName>shop_user_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="31" parent="20" name="cart_id">
+      <Position>1</Position>
+      <DataType>bigint|0</DataType>
+      <StateNumber>1949192</StateNumber>
+    </column>
+    <column id="32" parent="20" name="product_id">
+      <Position>2</Position>
+      <DataType>bigint|0</DataType>
+      <StateNumber>1948831</StateNumber>
+    </column>
+    <column id="33" parent="20" name="id">
+      <Position>3</Position>
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1949137</StateNumber>
+      <SequenceName>basket_product_id_seq</SequenceName>
+      <DefaultExpression>nextval(&apos;basket_product_id_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <foreign-key id="34" parent="20" name="basket_product_basket_id_fkey">
+      <ObjectId>41827</ObjectId>
+      <ColNames>cart_id</ColNames>
+      <RefTableId>41813</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>cart</RefTableName>
+      <RefKeyName>basket_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="35" parent="20" name="basket_product_product_id_fkey">
+      <ObjectId>41832</ObjectId>
+      <ColNames>product_id</ColNames>
+      <RefTableId>41805</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>product</RefTableName>
+      <RefKeyName>product_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="36" parent="21" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1948829</StateNumber>
+      <SequenceName>product_id_seq</SequenceName>
+      <DefaultExpression>nextval(&apos;product_id_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="37" parent="21" name="name">
+      <Position>2</Position>
+      <DataType>varchar(30)|0</DataType>
+      <StateNumber>1948829</StateNumber>
+    </column>
+    <column id="38" parent="21" name="price">
+      <Position>3</Position>
+      <DataType>varchar(50)|0</DataType>
+      <StateNumber>1948829</StateNumber>
+    </column>
+    <index id="39" parent="21" name="product_pkey">
+      <ObjectId>41809</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="40" parent="21" name="product_pkey">
+      <ObjectId>41810</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>product_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="41" parent="22" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1948828</StateNumber>
+      <SequenceName>shop_user_id_seq</SequenceName>
+      <DefaultExpression>nextval(&apos;shop_user_id_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="42" parent="22" name="name">
+      <Position>2</Position>
+      <DataType>varchar(30)|0</DataType>
+      <StateNumber>1948828</StateNumber>
+    </column>
+    <column id="43" parent="22" name="password_hash">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>1948841</StateNumber>
+    </column>
+    <index id="44" parent="22" name="shop_user_pkey">
+      <ObjectId>41801</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="45" parent="22" name="shop_user_pkey">
+      <ObjectId>41802</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>shop_user_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>
