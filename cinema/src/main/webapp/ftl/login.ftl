@@ -73,23 +73,17 @@
         <div class="main-div">
             <div class="panel">
                 <h2>Admin Login</h2>
-                <p>Please enter your email and password</p>
+                <p>Please enter your username and password</p>
             </div>
             <form id="Login">
 
                 <div class="form-group">
-
-
-                    <input type="text" class="form-control" id="username" placeholder="Email Address">
-
+                    <input type="text" class="form-control" id="username" placeholder="Username">
                 </div>
-
                 <div class="form-group">
-
                     <input type="password" class="form-control" id="username" placeholder="Password">
-
-
                 <button type="submit" class="btn btn-primary">Login</button>
+                    <a href="/ftl/registration.ftl">Register</a>
 
             </form>
         </div>

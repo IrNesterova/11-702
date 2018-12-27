@@ -14,8 +14,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.net.URLPermission;
 
-@WebServlet("/registration")
+@WebServlet(name = "registration", urlPatterns = {"/registration"})
 public class RegistrationServlet extends HttpServlet {
     private BCryptPasswordEncoder encoder;
     private AdminRepository adminRepository;

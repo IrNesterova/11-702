@@ -40,12 +40,16 @@
 </head>
 <body>
 
-<ul>
-    <li><a href="ftl/screening.ftl">Screening</a></li>
-    <li><a href="ftl/movieList.ftl">Movie List</a></li>
-    <li><a href="ftl/employeeList.ftl">Employee List</a></li>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link" href="screening">Screening List</a>
+            <a class="nav-item nav-link" href="movieList">Movie List</a>
+            <a class="nav-item nav-link" href="employeeList">Employee List</a>
 
-</ul>
+        </div>
+    </div>
+</nav>
 <div class="limiter">
     <div class="container-table100">
         <div class="wrap-table100">

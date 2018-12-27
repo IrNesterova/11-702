@@ -12,27 +12,58 @@
 </head>
 <body>
 
-<form action="movieList?action=editMovie" method="post">
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="well well-sm">
+                <form class="form-horizontal" action="movieList?action=editMovie" method="post">
+                    <fieldset>
+                        <legend class="text-center header">EditMovie</legend>
 
-    <label for="id_movie">Id:</label>
-    <input id="id_movie" type="text" name="id_movie" readonly value="${movieList.id_movie}">
-    <br>
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="id_movie" name="id_movie" readonly value="${movieList.id_movie}" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="title" name="title" type="text" value="${movieList.title}" class="form-control">
+                            </div>
+                        </div>
 
-    <label for="title">Title:</label>
-    <input id="title" type="text" name="title" value="${movieList.title}">
-    <br>
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-envelope-o bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="director" name="director" type="text" value="${movieList.director}" class="form-control">
+                            </div>
+                        </div>
 
-    <label for="actors">Actors:</label>
-    <input id="actors" type="text" name="actors" value="${movieList.actors}">
-    <br>
-    <label for="director">Director:</label>
-    <input id="director" type="text" name="director" value="${movieList.director}">
-    <br>
-    <label for="description">Description:</label>
-    <input id="description" type="text" name="description" value="${movieList.description}">
-    <br>
-    <button type="submit">Update</button
-</form>
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-phone-square bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="actors" name="actors" type="text"  value="${movieList.actors}" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-phone-square bigicon"></i></span>
+                            <div class="col-md-8">
+                                <textarea class="form-control" id="description" name="description" placeholder="Description" value="${movieList.description}" rows="7"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-12 text-center">
+                                <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>

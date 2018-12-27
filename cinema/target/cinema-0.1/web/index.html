@@ -5,28 +5,6 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
-    <style>
-        ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        width: 200px;
-        background-color: #f1f1f1;
-    }
-
-    .li a {
-        display: block;
-        color: #000;
-        padding: 8px 16px;
-        text-decoration: none;
-    }
-
-    /* Change the link color on hover */
-    .li a:hover {
-        background-color: #555;
-        color: white;
-    }
-    </style>
     <script>
         addEventListener("load", function () {
             setTimeout(hideURLbar, 0);
@@ -43,17 +21,22 @@
 </head>
 
 <body onload="onLoaderFunc()">
-    <h1>Movie Seat Selection</h1>
-    <div class="container">
-        <ul>
-            <li><a href="ftl/screening.ftl">Screening</a></li>
-            <li><a href="ftl/movieList.ftl">Movie List</a></li>
-            <li><a href="ftl/employeeList.ftl">Employee List</a></li>
 
-        </ul>
+    <div class="container">
         <div class="w3ls-reg">
-            <!-- input fields -->
+
             <div class="inputForm">
+                <h1>Movie Seat Selection</h1>
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <div class="navbar-nav">
+                            <a class="nav-item nav-link" href="screening">Screening List</a>
+                            <a class="nav-item nav-link" href="movieList">Movie List</a>
+                            <a class="nav-item nav-link" href="employeeList">Employee List</a>
+
+                        </div>
+                    </div>
+                </nav>
                 <h2>fill the required details below and select your seats</h2>
                 <div class="mr_agilemain">
                     <div class="agileits-left">
@@ -71,8 +54,7 @@
                 </div>
                 <button onclick="takeData()">Start Selecting</button>
             </div>
-            <!-- //input fields -->
-            <!-- seat availabilty list -->
+
             <ul class="seat_w3ls">
                 <li class="smallBox greenBox">Selected Seat</li>
 
@@ -80,8 +62,7 @@
 
                 <li class="smallBox emptyBox">Empty Seat</li>
             </ul>
-            <!-- seat availabilty list -->
-            <!-- seat layout -->
+
             <div class="seatStructure txt-center" style="overflow-x:auto;">
                 <table id="seatsBlock">
                     <p id="notification"></p>
@@ -519,8 +500,7 @@
                 </div>
                 <button onclick="updateTextArea()">Confirm Selection</button>
             </div>
-            <!-- //seat layout -->
-            <!-- details after booking displayed here -->
+
             <div class="displayerBoxes txt-center" style="overflow-x:auto;">
                 <table class="Displaytable w3ls-table" width="100%">
                     <tr>
@@ -541,13 +521,8 @@
                     </tr>
                 </table>
             </div>
-            <!-- //details after booking displayed here -->
+
         </div>
-    </div>
-    <div class="copy-wthree">
-        <p>© 2018 Movie Seat Selection . All Rights Reserved | Design by
-            <a href="http://w3layouts.com/" target="_blank">W3layouts</a>
-        </p>
     </div>
 
     <script src="js/jquery-2.2.3.min.js"></script>
@@ -579,14 +554,13 @@
                 var allNumberVals = [];
                 var allSeatsVals = [];
 
-                //Storing in Array
+
                 allNameVals.push($("#reservation_contact").val());
                 allNumberVals.push($("#Numseats").val());
                 $('#seatsBlock :checked').each(function () {
                     allSeatsVals.push($(this).val());
                 });
 
-                //Displaying 
                 $('#nameDisplay').val(allNameVals);
                 $('#NumberDisplay').val(allNumberVals);
                 $('#seatsDisplay').val(allSeatsVals);
@@ -610,7 +584,7 @@
             }
         });
     </script>
-    <!-- //script for seat selection -->
+
 
 </body>
 

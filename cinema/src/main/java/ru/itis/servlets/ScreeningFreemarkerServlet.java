@@ -56,7 +56,7 @@ public class ScreeningFreemarkerServlet extends HttpServlet {
         } else if (EDIT_ACTION.equals(action)){
             Long id = Long.parseLong(req.getParameter("id_screening"));
             Screening screening = screeningService.getScreeningById(id);
-            req.setAttribute("screening", screening);
+            req.setAttribute("screeningList", screening);
             path = UPDATE_USER_VIEW;
         } else if (ADD_ACTION.equals(action)){
             path = ADD_USER_VIEW;
