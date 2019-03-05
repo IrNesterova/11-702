@@ -10,8 +10,15 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 public class GameServer {
     private List<ClientHandler> clients;
+    private byte[]turns;
+    private static byte[][]victory = new byte[][]{
+            {-1, 0, 1},
+            {1, -1, 0},
+            {0, 1, -1}
+    };
     public GameServer(){
         clients = new CopyOnWriteArrayList<ClientHandler>();
+        turns = new byte[2];
     }
 
     public void start(int port){
@@ -32,86 +39,84 @@ public class GameServer {
         }
     }
 
-    private class ClientHandler extends Thread{
+    private class ClientHandler extends Thread {
         private Socket clientSocket;
         private BufferedReader in;
-        private BufferedReader in_1;
-        private BufferedReader in_2;
 
-        ClientHandler(Socket socket){
-            this.clientSocket = socket;
-            clients.add(this);
-            System.out.println("New player " + socket.getPort());
 
+        ClientHandler(Socket socket) {
+            try {
+                this.clientSocket = socket;
+                if (clients.size() == 2) {
+                    PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);
+                    out.println("only two players allowed");
+                    clientSocket.close();
+                    out.close();
+                } else {
+                    clients.add(this);
+                    System.out.println("New player " + socket.getPort());
+                    tellOne(this, "you are the player " + clients.indexOf(this));
+                    if (clients.size() == 2) {
+                        preGame();
+                    }
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
 
 
-        public void run(){
-            try{
-                if (clients.size() % 2 == 0) {
-                    System.out.println("Hello! This is RPS game, type R for rock, P for paper, S for scissors.");
-
-                        for (int i = 0; i < clients.size(); i = i+2){
-                            in_1 = new BufferedReader(new InputStreamReader(clients.get(i).clientSocket.getInputStream()));
-                            in_2 = new BufferedReader(new InputStreamReader(clients.get(i+1).clientSocket.getInputStream()));
-                            String inputLine_1;
-                            String inputLine_2;
-                            while ((inputLine_1 = in_1.readLine()) != null && (inputLine_2 = in_2.readLine()) != null) {
-                                if(inputLine_1.equals(inputLine_2)){
-                                    for (ClientHandler clientHandler : clients){
-                                        PrintWriter out = new PrintWriter(clientHandler.clientSocket.getOutputStream(), true);
-                                        out.println("draw");
-                                    }
-                                } else if(inputLine_1.equals("R") && inputLine_2.equals("S")){
-                                    for (ClientHandler clientHandler : clients){
-                                        PrintWriter out = new PrintWriter(clientHandler.clientSocket.getOutputStream(), true);
-                                        out.println("first player wins");
-                                    }
-
-                                } else if (inputLine_1.equals("S") && inputLine_2.equals("R")){
-                                    for (ClientHandler clientHandler : clients){
-                                        PrintWriter out = new PrintWriter(clientHandler.clientSocket.getOutputStream(), true);
-                                        out.println("second player wins");
-                                    }
-
-                                } else if (inputLine_1.equals("R") && inputLine_2.equals("P")){
-                                    for (ClientHandler clientHandler : clients){
-                                        PrintWriter out = new PrintWriter(clientHandler.clientSocket.getOutputStream(), true);
-                                        out.println("second player wins");
-                                    }
-
-                                } else if (inputLine_1.equals("P") && inputLine_2.equals("R")){
-                                    for (ClientHandler clientHandler : clients){
-                                        PrintWriter out = new PrintWriter(clientHandler.clientSocket.getOutputStream(), true);
-                                        out.println("player one wins");
-                                    }
-
-                                } else if (inputLine_1.equals("S") && inputLine_2.equals("P")){
-                                    for (ClientHandler clientHandler : clients){
-                                        PrintWriter out = new PrintWriter(clientHandler.clientSocket.getOutputStream(), true);
-                                        out.println("player one wins");
-                                    }
-                                    System.out.println("Player one wins");
-                                } else if (inputLine_1.equals("P") && inputLine_2.equals("S")){
-                                    for (ClientHandler clientHandler : clients){
-                                        PrintWriter out = new PrintWriter(clientHandler.clientSocket.getOutputStream(), true);
-                                        out.println("player two");
-                                    }
-                                } else if(inputLine_1.equals(".") && inputLine_2.equals(".")){
-                                    break;
+        public void run() {
+            try {
+                in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
+                String inputLine;
+                while ((inputLine = in.readLine()) != null) {
+                    if (".".equals(inputLine)) {
+                        tellAll(this.clientSocket.getPort() + "quit");
+                        break;
+                    } else {
+                        if (clients.size() == 2) {
+                            int idx = clients.indexOf(this);
+                            turns[idx] = Byte.parseByte(inputLine);
+                            if (turns[0] != 0 && turns[1] != 0) {
+                                int win = getWinner();
+                                if (win != -1) {
+                                    tellAll(win + " wins!");
+                                } else {
+                                    tellAll("Draw");
                                 }
+                                turns = new byte[2];
+                                preGame();
+                            }
+                        } else {
+                            tellOne(this, "wait for second player");
                         }
-
-                        in_1.close();
-                        in_2.close();
-                        clientSocket.close();
                     }
                 }
-
-
-            } catch (Exception e){
-                throw new IllegalStateException(e);
+                in.close();
+                clientSocket.close();
+            } catch (IOException e) {
+                e.printStackTrace();
             }
         }
     }
+
+    private void tellOne(ClientHandler handler, String message) throws IOException{
+        PrintWriter out = new PrintWriter(handler.clientSocket.getOutputStream(), true);
+        out.println(message);
+    }
+
+    private void tellAll(String message) throws IOException{
+            for (ClientHandler clientHandler: clients){
+                    tellOne(clientHandler, message);
+            }
+    }
+
+    private void preGame() throws IOException{
+            tellAll("Hello! 1 is for rock, 2 is for paper and 3 is for scissors");
+        }
+
+        private int getWinner(){
+            return victory[turns[0]-1][turns[1]-1];
+        }
 }
